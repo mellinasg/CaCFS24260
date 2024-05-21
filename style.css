@@ -1,0 +1,574 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* global */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Open+Sans:wght@400;500;800&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+    background: #757F9A;
+    background: -webkit-linear-gradient(to right, #D7DDE8, #757F9A);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #000000, #2a2f3b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+/*pagina1*/
+
+.page1 {
+   
+    background-color: #000;
+    width: 100vw;
+    height: 100vh;
+}
+/*toolbarjoni*/
+.navbar-brand img {
+
+    display:flex;
+    width: 14vw;
+    filter: drop-shadow(10px 10px 10px  rgb(0, 0, 0));
+    position: absolute;
+    top: -67px;
+    left: -27px;
+
+}
+
+
+#menu li a {
+
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    
+
+}
+
+#menu form button {
+
+    font-size: 18px;
+    font-weight: bold;
+    
+}
+
+.toolbar {
+    /* background-color: #ffffff15; */
+    background-color: #000;
+    font-family: 'Times New Roman', Times, serif;
+     color: #fff;
+     text-align: end;
+     font-weight: bold;
+     font-size: 1.2em;
+     width: 90%;
+     margin-top: 30px;
+     margin-left: 5%;
+     margin-right: 5%;
+     border-radius: 30px;
+     position: fixed; 
+     top: 20 px;
+     z-index: 1000;
+     
+   }
+   
+   .toolbar ul {
+     list-style-type: none; /* Quita los marcadores de lista */
+     padding: 0; /* Quita el relleno predeterminado */
+     margin: 0; /* Quita el margen predeterminado */
+   }
+   
+   .toolbar ul li {
+     display: inline; /* Muestra los elementos de la barra de herramientas en línea */
+   }
+   
+   .toolbar ul li a {
+     display: inline-block; /* Hace que los elementos de la barra de herramientas sean bloques en línea */
+     padding: 10px 20px; /* Añade relleno a los enlaces */
+     text-decoration: none; /* Quita la decoración del texto */
+     color: #fff; /* Color del texto */
+   }
+   
+   .toolbar ul li a.hoverable:hover {
+     background-color: #5555551c; /* Cambia el color de fondo al pasar el cursor */
+    
+     padding-bottom: 5px;
+   
+     border-bottom: cyan 5px solid;
+   }
+   
+   
+   .toolbar_contact{
+     border: 1px solid;
+     border-radius: 30px;
+     background-color: #ffffff73;
+     padding: 10px;
+   }
+
+/**/
+/*slider joni */
+
+/* css slider */
+.slider{
+    height: 100vh;
+    position: relative;
+}
+.slider .list .item{
+    position: absolute;
+    inset: 0 0 0 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: .5s;
+}
+.slider .list .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.slider .list .item::after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-image: linear-gradient(
+        to top, #000000 20%, transparent
+    );
+}
+.slider .list .item .content{
+    position: absolute;
+    left: 10%;
+    top: 20%;
+    width: 500px;
+    max-width: 80%;
+    z-index: 1;
+}
+.slider .list .item .content p:nth-child(1){
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    color: #D7DDE8;
+}
+.slider .list .item .content h2{
+    font-size: 60px;
+    margin: 0;
+    color: white;
+}
+.slider .list .item.active{
+    opacity: 1;
+    z-index: 10;
+}
+@keyframes showContent {
+    to{
+        transform: translateY(0);
+        filter: blur(0);
+        opacity: 1;
+    }
+
+}
+.content p{
+    color: #D7DDE8;
+}
+.slider .list .item.active p:nth-child(1),
+.slider .list .item.active h2,
+.slider .list .item.active p:nth-child(3){
+    transform: translateY(30px);
+    filter: blur(20px);
+    opacity: 0;
+    animation: showContent .7s .9s ease-in-out 1 forwards;
+}
+.slider .list .item.active h2{
+    animation-delay: 1s;
+}
+.slider .list .item.active p:nth-child(3){
+    animation-duration: 1.3s;
+}
+.arrows{
+    position: absolute;
+    top: 40%;
+    right: 20px;
+    z-index: 100;
+}
+.arrows button{
+    background-color: #eee5;
+    border: none;
+    font-family: monospace;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    font-size: x-large;
+    color: #eee;
+    transition: .5s;
+}
+.arrows button:hover{
+    background-color: #eee;
+    color: black;
+}
+.thumbnail{
+    position: absolute;
+    bottom: 0px;
+    z-index: 11;
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    height: 210px;
+    padding: 0px 50px;
+    box-sizing: border-box;
+    
+    justify-content: center;
+}
+.thumbnail::-webkit-scrollbar{
+    width: 0;
+}
+.thumbnail .item{
+    width: 120px;
+    height: 160px;
+    filter: brightness(.2);
+    transition: .5s ;
+    flex-shrink: 0;
+    
+}
+.thumbnail .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.thumbnail .item.active{
+    filter: brightness(1.5);
+    scale: 1.1;
+    
+}
+.thumbnail .item .content{
+    position: absolute;
+    inset: auto 10px 10px 10px;
+    color: rgb(175, 170, 170);
+   
+}
+@media screen and (max-width: 678px) {
+    .thumbnail{
+        justify-content: start;
+    }
+    .slider .list .item .content h2{
+        font-size: 60px;
+    }
+    .arrows{
+        top: 10%;
+    }
+}
+
+
+.page2 {
+   
+    background-color:#000000;
+    width: 100vw;
+    height: 95vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.cardPage2{
+    width: 70vw;
+    height: 55vh;
+    background-color: #05F2F2 ;
+    border-radius: 20px;
+    border-color: white;
+    border: 10px solid;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+}
+
+.cardPage2 p ,h3{
+    color: #ffffff;
+    padding-bottom: 2vh;
+}
+.cardPage2 h2{
+    color: #fff;
+    font-weight: bold;
+    padding-bottom: 5vh;
+}
+
+.cardPage2:hover{
+    background:#05F2F2;
+    box-shadow: 0 0 10px #05F2F2, 0 0 40px #05F2F2, 0 0 80px #05F2F2;
+    transition-delay: 1s;
+ }
+
+
+
+.page4 {
+   
+    background-color: rgb(255, 16, 99);
+    width: 100vw;
+    height: 100vh;
+}
+
+.page5 {
+   
+    background-color: rgb(39, 21, 27);
+    width: 100vw;
+    height: 100vh;
+}
+
+.page6 {
+   
+    
+    width: 100vw;
+    height: 100vh;
+}
+
+.page7 {
+   
+    background-color:crimson;
+    width: 100vw;
+    height: 100vh;
+}
+
+footer {
+    background-color: red;
+    flex: 1;
+    width: 100%;
+    height: 4vh;
+    
+}
+.margintop{
+    margin-top: 95vh;
+
+}
+
+footer p{
+    color: #fff;
+}
+
+/*posventa*/
+
+.divimage{
+    display: flex;
+    width: 70vw;
+    flex: 1;
+    justify-content: flex-start;
+    
+
+
+
+}
+
+.divposventa{
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: 88vh;
+    justify-content: center;
+    text-align: center;
+    
+}
+
+.divcontratos{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 97vh;
+    justify-content: center;
+    text-align: center;
+    
+}
+.contenedor figure{
+   position:relative;
+    height: 200px;
+    cursor: pointer;
+    width: 250px;
+    overflow: hidden;
+    border-radius: 6px;
+    box-shadow: 0px 15px 25px rgba(0,0,0,0.50);
+}
+.contenedor figure img{
+    width: 100%;
+    height: 100%;
+    transition: all 400ms ease-out;
+    will-change: transform;
+}
+.contenedor figure .capa{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,103,123,0.7);
+    transition: all 400ms ease-out;
+    opacity: 0;
+    visibility: hidden;
+   text-align: center;
+}
+.contenedor figure:hover > .capa {
+    opacity: 1;
+    visibility: visible;
+}
+.contenedor figure:hover > .capa h3{
+    margin-top: 70px;
+    margin-bottom: 15px;
+}
+.contenedor figure:hover > img{
+    transform: scale(1.3);
+}
+.contenedor figure .capa h3{
+    color: #fff;
+    font-weight: 400;
+    margin-bottom: 120px;
+    transition: all 400ms ease-out;
+     margin-top: 30px;
+}
+.contenedor figure .capa p{
+    color: #fff;
+    font-size: 15px;
+    line-height: 1.5;
+    width: 100%;
+    max-width: 220px;
+    margin: auto;
+}
+
+.cardPage2{
+    width: 80vw;
+    height: 60vh;
+    background-color: #000000;
+    border-radius: 10px;
+    border-color: rgb(255, 255, 255);
+    border: 5px solid;
+    text-align: center;
+    z-index: 11;
+    color: white;
+    padding: 50px;
+}
+.page3{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5vh;
+}
+.container-psventa{
+    padding: 10vw;
+    color: white;
+    width: 100vw;
+    height: 30vh;
+    flex: 1;
+
+}
+
+.container-psventa p{
+    color: #fff;
+    font-size: 1.3em;
+}
+
+/*contratos*/
+.container-fluid {
+
+    display: flex;
+
+    width: 100vw;
+    height: 55vh;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+.card {
+    position: relative;
+    width: 325px;
+    height: 375px;
+    margin: 15px;
+}
+
+.card .face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.card .front {
+    transform: perspective(600px) rotateY(0deg);
+    box-shadow: 0 5px 10px #000;
+    object-fit: cover;
+}
+
+.card .front img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    
+
+}
+
+.card .front h3 {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    color: #fff;
+    background: rgba(0,0,0,.4);
+    text-align: center;
+}
+
+.card .back {
+    transform: perspective(600px) rotateY(180deg);
+    background: rgb(3, 35, 54);
+    padding: 15px;
+    color: #f3f3f3;
+    display: flex;
+ 
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    box-shadow: 0 5px 10px #000;
+}
+
+.card .back .link {
+    border-top: solid 1px #f3f3f3;
+    height: 50px;
+    line-height: 50px;
+}
+
+.card .back .link a {
+    color: #f3f3f3;
+}
+
+.card .back h3 {
+    font-size: 20px;
+    margin-top: 20px;
+    letter-spacing: 2px;
+}
+
+.card .back p {
+    letter-spacing: 1px;
+} 
+
+.card:hover .front {
+    transform: perspective(600px) rotateY(180deg);
+}
+
+.card:hover .back {
+    transform: perspective(600px) rotateY(360deg);
+}
+
+
+.container-contratos{
+    padding: 10vw;
+    color: white;
+    width: 100vw;
+    height: 40vh;
+}
