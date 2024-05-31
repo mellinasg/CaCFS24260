@@ -375,7 +375,12 @@ footer p{
     text-align: center;
     
 }
-
+.card-position{
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    justify-content: center;
+}
 .divcontratos{
     display: flex;
     flex-direction: column;
@@ -481,7 +486,7 @@ footer p{
     flex-direction: row;
     justify-content: space-around; /* Espacio equitativo entre las tarjetas */
     align-items: center;
-    height: 50vh;
+    height: 45vh;
     width: 100vw;
     overflow: hidden;
     
@@ -958,8 +963,8 @@ header h1{
   }
 
   .mapa{
-    width: 40vw;
-    height: 40vh;
+    width: 35vw;
+    height: 35vh;
     margin-left: 6vw;
    
   }
@@ -982,8 +987,8 @@ header h1{
     flex-direction: column;
     width: 55vw;
     height: 100vh;
-    padding: 20px;
-    padding-top: 15vh;
+    padding: 15px;
+    padding-top: 10vh;
   }
 
   .img-fluid{

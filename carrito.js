@@ -195,6 +195,14 @@ function actualizarTotalCarrito(){
     document.getElementsByClassName('carrito-precio-total')[0].innerText = '$'+total.toLocaleString("es") + ",00";
 
 }
+/*envio de parametros entre formularios */
+document.getElementById('contacto-link').addEventListener('click', function(event) {
+    event.preventDefault(); // Prevenir el comportamiento predeterminado del enlace
+    var titulo = document.querySelector('.titulo-item').textContent;
+    var url = new URL(this.href);
+    url.searchParams.set('titulo', titulo); // Agregar el título como parámetro de la URL
+    window.location.href = url.toString(); // Redirigir a la nueva URL
+});
 
 
 

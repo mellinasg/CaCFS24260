@@ -52,4 +52,11 @@ thumbnails.forEach((thumbnail, index) => {
     })
 })
 
+function SendClicked() {
+    alert("Gracias por dejarnos su contacto, a la brevedad uno de nuestros asesores se pondrá en contacto con usted, muchas gracias.");
+}
 
+var buttons = document.getElementsByClassName('btnsend');
+for (var i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener('click', SendClicked);
+}
