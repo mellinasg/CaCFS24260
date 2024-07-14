@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="log">
+    <div class="login">
+        <img src="image/logoempresa1.png" alt="">
+     <div class="titulo">concesionaria: <br>Las Americas</div>
+     <h1>Iniciá sesión</h1>
+     <form id="loginForm" action="/login" method="POST">
+      <div class="items">
+          <label for="user" class="txt-input-label">Tu usuario:</label><br>
+          <div class="user">
+              <input id="user" name="user" type="text" placeholder="Ingresá tu nombre de usuario" class="form-control" maxlength="25" autocomplete="off" required>
+              <i class='bx bxs-user'></i>
+          </div>
+  
+          <label for="pass" class="txt-input-label">Tu Clave:</label>
+          <div class="pass">
+              <input id="pass" name="pass" type="password" placeholder="Ingresá tu Clave" class="form-control" maxlength="25" autocomplete="off" required>
+              <i class='bx bxs-hide' onclick="OcultarMostrar()"></i>
+          </div>
+  
+          <button type="submit" class="btn">Ingresar</button>
+  
+          <div class="remember-forgot txtlbl">
+              <label><input type="checkbox" name="remember" value="true">Recuérdame</label>
+              <a href="#">¿Olvidaste la clave/usuario?</a>
+          </div>
+  
+          <br>
+  
+          <div class="register-link txtlbl">
+              <p>¿Aún no tienes cuenta? <a href="/register">Regístrate</a></p>
+          </div>
+      </div>
+  </form>
+  
+  <script>
+      function OcultarMostrar() {
+          // Función para ocultar o mostrar la clave
+          const passwordField = document.getElementById('password');
+          if (passwordField.type === "password") {
+              passwordField.type = "text";
+          } else {
+              passwordField.type = "password";
+          }
+      }
+  </script>
+  
+     
+    </div>
+    <div></div>
+</body>
+</html>

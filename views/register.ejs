@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="log">
+    <div class="login">
+        <img src="image/logoempresa1.png" alt="">
+     <div class="titulo">concesionaria: <br>Las Americas</div>
+
+
+     <form id="loginForm" action="/register" method="POST">
+        <div class="items">
+
+            
+
+            <label for="name" class="txt-input-label">Nombre completo:</label>
+            <div class="password">
+                <input id="name" name="name" type="text" placeholder="Ingresá tu nombre" class="form-control" pattern=".*" maxlength="25" autocomplete="off" required>
+                <i class='bx bxs-hide' ></i>
+            </div>
+
+            <label for="user" class="txt-input-label">Tu usuario:</label><br>
+            <div class="user">
+                <input id="user" name="user" type="text" placeholder="Ingresá tu nombre de usuario" class="form-control" maxlength="25" autocomplete="off" required>
+                <i class='bx bxs-user'></i>
+            </div>
+
+            <label for="pass" class="txt-input-label">Tu Clave:</label>
+            <div class="password">
+                <input id="pass" name="pass" type="password" placeholder="Ingresá la clave nuevamente" class="form-control" pattern=".*" maxlength="25" autocomplete="off" required>
+                <i class='bx bxs-hide' onclick="OcultarMostrar('password1')"></i>
+            </div>
+
+            
+
+            <button type="submit" class="btn">Aceptar</button>
+
+            <div class="remember-forgot txtlbl">
+                <a href="#">Ya estoy registrado</a>
+            </div>
+
+            <br>
+
+        </div>
+    </form>
+     
+    </div>
+    <div></div>
+</body>
+</html>
